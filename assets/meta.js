@@ -139,7 +139,7 @@ jQuery(document).ready(function($) {
     }
 
     var buttons = document.querySelectorAll(".js_meta");
-    var api = './assets/max';
+    var api = './assets/medline';
     var d = new Date();
     var month = d.getMonth()+1;
     var day = d.getDate();

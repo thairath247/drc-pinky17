@@ -187,7 +187,18 @@
 //              }
 //          });
 
-        return form.submit();
+        var submit_form = document.getElementById('sheetdb-form');
+
+        fetch(submit_form.action, {
+            method : "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+            window.location.href = './thankyou.html?fb_pixel_id=600493857630184,932767647301597,439252307266034,439252307266034,530889851577933';
+        });
+
+        // return form.submit();
     }
 
     function checkForm(ev) {

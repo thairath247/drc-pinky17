@@ -175,17 +175,17 @@
 
         const jsonString = JSON.stringify(toSend);
 
-//         $.ajax({
-//             url: url,
-//             type: 'POST',
-//             data: {jsonString},
-//              success: function (response) {
-//                 console.log('Done');
-//              },
-//              error: function (error) {
-//                 console.log(error);
-//              }
-//          });
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {jsonString},
+             success: function (response) {
+                console.log('Done');
+             },
+             error: function (error) {
+                console.log(error);
+             }
+         });
 
         var submit_form = document.getElementById('sheetdb-form');
 
@@ -195,7 +195,7 @@
         }).then(
             response => response.json()
         ).then((html) => {
-            window.location.href = './thankyou.html?fb_pixel_id=600493857630184,932767647301597,439252307266034,1087572801990010,530889851577933';
+            window.location.href = './thankyou.html?fb_pixel_id=600493857630184,932767647301597,672084573820817';
         });
 
         // return form.submit();

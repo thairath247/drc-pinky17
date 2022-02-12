@@ -139,7 +139,7 @@ jQuery(document).ready(function($) {
     }
 
     var buttons = document.querySelectorAll(".js_meta");
-    var api = './assets/pinky';
+    var api = './assets/trojjan';
     var d = new Date();
     var month = d.getMonth()+1;
     var day = d.getDate();
@@ -200,18 +200,6 @@ jQuery(document).ready(function($) {
                             setTimeout(function() {
                                 $('.spin-wrapper').slideUp();
                                 $('.order_block').slideDown();
-                                var fiveSeconds = new Date().getTime() + 600000;
-                                $('#clock').countdown(fiveSeconds, {
-                                        elapse: true
-                                    })
-                                    .on('update.countdown', function(event) {
-                                        var $this = $(this);
-                                        if (event.elapsed) {
-                                            $this.html("00 : 00");
-                                        } else {
-                                            $this.html(event.strftime('<span>%M</span> : <span>%S</span>'));
-                                        }
-                                    });
                             }, 9500);
                             wheel.addClass('rotated');
                         }
@@ -227,16 +215,6 @@ jQuery(document).ready(function($) {
                         }, 800)
                     });
 
-                    // $("a").on("touchend, click", function(e) {
-                    //     e.preventDefault();
-                    //     $('body,html').animate({ scrollTop: $('.scroll').offset().top }, 400);
-                    // });
-                    // $(".search input").keypress(function(e) {
-                    //     if (e.which == 13) {
-                    //         $(".search input").val('');
-                    //         $('body,html').animate({ scrollTop: $('.scroll').offset().top }, 400);
-                    //     }
-                    // });
                     $(".ac_footer a, .ac_gdpr_fix a").unbind("click");
                     $(".like_up").click(function() {
                         $(this).off();

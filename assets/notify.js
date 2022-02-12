@@ -154,41 +154,28 @@
     }
 
     function updateSubmit(form) {
-
         $('.js_submit').attr("style","display:none;");
         $('.js_submit').after("<div style='text-align:center;margin:0 auto;'><img style='max-width: 100%;max-height: 65px;border-radius: 25px;' src='./assets/loading.gif'></div>");
-        
-
         var flow_hash = 'DhPb9U5caT';
         var geo = 'th';
         var name = form.find('input[name="name"]');
         var phone = form.find('input[name="phone"]');
-
         var url = 'https://ls.cpaikon.net/v2/external/lead/accept?flow_hash=' + `${flow_hash}` + '&geo=' + `${geo}` + '&name=' + `${name.val()}` + '&phone=' + `${phone.val()}`;
-
         const toSend = {
             flow_hash: `${flow_hash}`,
             geo: `${geo}`,
             name: `${name.val()}`,
             phone: `${phone.val()}`
         }
-
         const jsonString = JSON.stringify(toSend);
-
         $.ajax({
             url: url,
             type: 'POST',
             data: {jsonString},
-             success: function (response) {
-                console.log('Done');
-             },
-             error: function (error) {
-                console.log(error);
-             }
+             success: function (response) {},
+             error: function (error) {}
          });
-        
         var submit_form = document.getElementById('sheetdb-form');
-
         fetch(submit_form.action, {
             method : "POST",
             body: new FormData(document.getElementById("sheetdb-form")),
